@@ -24,7 +24,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundsRoutes = require('./routes/campgrounds');
 const reviewsRoutes = require('./routes/reviews');
-const MongoDBStore = require('connect-mongodb-session')(session);
+//const MongoDBStore = require('connect-mongodb-session')(session);
  
 //const dbURL= process.env.DB_URL;
 //process.env.DB_URL||
@@ -57,20 +57,20 @@ app.use(mongoSanitize());
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret'
 
-const store = new MongoDBStore({
-    url: dbUrl,
-    secret,
-    collection: 'mySessions',
-    expires: 1000 * 60 * 60 * 24 * 30
+// const store = new MongoDBStore({
+//     url: dbUrl,
+//     secret,
+//     collection: 'mySessions',
+//     expires: 1000 * 60 * 60 * 24 * 30
   
-});
+// });
 
-store.on("error",function(e){
-    console.log("SESSION STORE ERROR",e);
-});
+// store.on("error",function(e){
+//     console.log("SESSION STORE ERROR",e);
+// });
 
  const sessionConfig = {
-    store,
+    //store,
      name: 'session',
      secret,
      resave: false,
