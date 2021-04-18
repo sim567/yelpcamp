@@ -70,7 +70,7 @@ layout: {
 map.addLayer({
 id: 'unclustered-point',
 type: 'circle',
-source: 'earthquakes',
+source: 'camps',
 filter: ['!', ['has', 'point_count']],
 paint: {
 'circle-color': '#11b4da',
